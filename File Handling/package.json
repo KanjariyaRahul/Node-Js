@@ -1,0 +1,12 @@
+{
+  "name": "file_handling",
+  "version": "3.4.1",
+  "description": "read multiple text files within the same directory",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "rahul kanjariya",
+  "license": "ISC"
+}
