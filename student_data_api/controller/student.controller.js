@@ -1,36 +1,55 @@
 // Get all students
+const Student = require('./../model/Student');
 exports.index = (req, res) => {
     res.json({
         status: "Run successfully",
         data: [{
-                stud_name: "John Doe",
-                program: "MCA",
-                enrollmentNo: 230823045,
-                dob: "2000-01-01",
-                bloodGroup: "O+",
-                mobileNumber: "9265614292",
-                email: "johndoe@example.com",
-                address: "123 Main St, Anytown, Country"
+                "stud_name": "rahul",
+                "enrollment": "230823045",
+                "program": "MCA",
+                "semester": "3rd",
+                "contact": {
+                    "email": "rahul@example.com",
+                    "mobile": "9265614292",
+                    "address": "123 Main St, Hometown, USA"
+                },
+                "dateOfBirth": "2003-02-22",
+                "gender": "Male",
+                "image": "https://example.com/images/alice.jpg",
+                "bloodGroup": "O+",
+                "batch": "Batch 2025"
             },
             {
-                stud_name: "Jane Smith",
-                program: "MCA",
-                enrollmentNo: 230823056,
-                dob: "1999-05-15",
-                bloodGroup: "A-",
-                mobileNumber: "5619869035",
-                email: "janesmith@example.com",
-                address: "456 Elm St, Othertown, Country"
+                "stud_name": "Jay",
+                "enrollment": "230823056",
+                "program": "Electrical Engineering",
+                "semester": "5th",
+                "contact": {
+                    "email": "bob.smith@example.com",
+                    "mobile": "6142926587",
+                    "address": "456 Elm St, Metropolis, USA"
+                },
+                "dateOfBirth": "2001-08-22T00:00:00.000Z",
+                "gender": "Male",
+                "image": "https://example.com/images/bob.jpg",
+                "bloodGroup": "A-",
+                "batch": "Batch 2024"
             },
             {
-                stud_name: "Emily Johnson",
-                program: "BCA",
-                enrollmentNo: 230459812,
-                dob: "2001-11-23",
-                bloodGroup: "B+",
-                mobileNumber: "1564891682",
-                email: "emilyjohnson@gmail.com",
-                address: "789 Pine St, Sometown, Country"
+                "stud_name": "jeet",
+                "enrollment": "230823045",
+                "program": "Mechanical Engineering",
+                "semester": "2nd",
+                "contact": {
+                    "email": "jeet@example.com",
+                    "mobile": "5629265412",
+                    "address": "789 Oak St, Big City, USA"
+                },
+                "dateOfBirth": "2003-12-01T00:00:00.000Z",
+                "gender": "Male",
+                "image": "https://example.com/images/carol.jpg",
+                "bloodGroup": "B+",
+                "batch": "Batch 2026"
             }
 
         ],
@@ -39,22 +58,30 @@ exports.index = (req, res) => {
 };
 
 // Store a new student
-exports.store = (req, res) => {
-    const { stud_name, program, enrollmentNo, dob, bloodGroup, mobileNumber, email, address } = req.body;
-    res.json({
-        status: "Run successfully",
-        data: {
-            stud_name,
-            program,
-            enrollmentNo,
-            dob,
-            bloodGroup,
-            mobileNumber,
-            email,
-            address
-        },
-        messages: "Inserted Successfully"
-    });
+exports.store = async(req, res) => {
+
+    try {
+        console.log(req.body)
+        const student = await Student.create(req.body);
+        res.status(201).json(student);
+    }catch(error){
+        res.status(400).json({ message: error.message });
+    }
+    // const { stud_name, program, enrollmentNo, dob, bloodGroup, mobileNumber, email, address } = req.body;
+    // res.json({
+    //     status: "Run successfully",
+    //     data: {
+    //         stud_name,
+    //         program,
+    //         enrollmentNo,
+    //         dob,
+    //         bloodGroup,
+    //         mobileNumber,
+    //         email,
+    //         address
+    //     },
+    //     messages: "Inserted Successfully"
+    // });
 };
 
 
@@ -64,34 +91,52 @@ exports.show = (req, res) => {
 
     // Example data; replace with actual student data retrieval logic
     const students = [{
-            enrollmentNo: 230823045,
-            stud_name: "John Doe",
-            program: "MCA",
-            dob: "2000-01-01",
-            bloodGroup: "O+",
-            mobileNumber: "9265614292",
-            email: "johndoe@example.com",
-            address: "123 Main St, Anytown, Country"
+            "stud_name": "rahul",
+            "enrollment": "230823045",
+            "program": "MCA",
+            "semester": "3rd",
+            "contact": {
+                "email": "rahul@example.com",
+                "mobile": "9265614292",
+                "address": "123 Main St, Hometown, USA"
+            },
+            "dateOfBirth": "2003-02-22",
+            "gender": "Male",
+            "image": "https://example.com/images/alice.jpg",
+            "bloodGroup": "O+",
+            "batch": "Batch 2025"
         },
         {
-            enrollmentNo: 230823056,
-            stud_name: "Jane Smith",
-            program: "MCA",
-            dob: "1999-05-15",
-            bloodGroup: "A-",
-            mobileNumber: "5619869035",
-            email: "janesmith@example.com",
-            address: "456 Elm St, Othertown, Country"
+            "stud_name": "Jay",
+            "enrollment": "230823056",
+            "program": "Electrical Engineering",
+            "semester": "5th",
+            "contact": {
+                "email": "bob.smith@example.com",
+                "mobile": "6142926587",
+                "address": "456 Elm St, Metropolis, USA"
+            },
+            "dateOfBirth": "2001-08-22T00:00:00.000Z",
+            "gender": "Male",
+            "image": "https://example.com/images/bob.jpg",
+            "bloodGroup": "A-",
+            "batch": "Batch 2024"
         },
         {
-            enrollmentNo: 230459812,
-            stud_name: "Emily Johnson",
-            program: "BCA",
-            dob: "2001-11-23",
-            bloodGroup: "B+",
-            mobileNumber: "1564891682",
-            email: "emilyjohnson@gmail.com",
-            address: "789 Pine St, Sometown, Country"
+            "stud_name": "jeet",
+            "enrollment": "230823045",
+            "program": "Mechanical Engineering",
+            "semester": "2nd",
+            "contact": {
+                "email": "jeet@example.com",
+                "mobile": "5629265412",
+                "address": "789 Oak St, Big City, USA"
+            },
+            "dateOfBirth": "2003-12-01T00:00:00.000Z",
+            "gender": "Male",
+            "image": "https://example.com/images/carol.jpg",
+            "bloodGroup": "B+",
+            "batch": "Batch 2026"
         }
     ];
 
