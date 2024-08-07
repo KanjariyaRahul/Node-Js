@@ -1,7 +1,7 @@
 const express = require('express');
-const { MongoClient, ServerApiVersion } = require('mongodb');
+const {ServerApiVersion } = require('mongodb');
 const mongoose = require('mongoose');
-const cors = require('cors'); // Fixed import statement for 'cors'
+const cors = require('cors');
 const app = express();
 
 app.use(cors()); // Use CORS middleware
@@ -10,18 +10,18 @@ app.use(express.json()); // Parse JSON bodies
 // Import routes
 const srouter = require('./routes/stundent.route');
 
+// Connection URI
+const uri = "mongodb+srv://rahulkanjariya9265:rahul9265@rahul.tmr7j.mongodb.net/sample_mflix?retryWrites=true&w=majority";
 
-
-const uri = "mongodb+srv://rahulkanjariya9265:rahul@9265/Mydata";
-// Create a MongoClient with a MongoClientOptions object to set the Stable API version
-const client = new MongoClient(uri, {
+// Connect to MongoDB using Mongoose
+mongoose.connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    serverApi: {
-        version: ServerApiVersion.v1,
-        strict: true,
-        deprecationErrors: true,
-    }
+    serverApi: ServerApiVersion.v1
+}).then(() => {
+    console.log('Connected to MongoDB');
+}).catch((error) => {
+    console.error('Error connecting to MongoDB:', error);
 });
 
 // Use routes

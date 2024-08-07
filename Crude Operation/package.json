@@ -1,0 +1,16 @@
+{
+  "name": "crude_operation",
+  "version": "3.4.1",
+  "description": "Crude Operation",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "rahul kanjariya",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "nodemon": "^3.1.4"
+  }
+}
