@@ -1,8 +1,10 @@
 const express = require('express');
-const {ServerApiVersion } = require('mongodb');
+const { ServerApiVersion } = require('mongodb');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
+
+
 
 app.use(cors()); // Use CORS middleware
 app.use(express.json()); // Parse JSON bodies
