@@ -1,5 +1,5 @@
 const express = require('express');
-const tokenMiddleware = require('./../tokenMiddleware');
+const tokenMiddleware = require('./../tokenMiddleware')
 const studentController = require('./../controller/student.controller');
 // const uservalidation = require('./../validator/studentValidator');
 
@@ -8,7 +8,7 @@ const studentController = require('./../controller/student.controller');
 const router = express.Router();
 
 router.get('/students', studentController.index)
-router.get('/student/:enrollmentNo', studentController.show)
+router.get('/student/:_id', studentController.show)
     // router.post('/student', uservalidation.createStudent, studentController.store)
 router.post('/student', tokenMiddleware, studentController.store)
 router.put('/student', studentController.update)
