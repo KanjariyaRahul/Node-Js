@@ -1,0 +1,45 @@
+ngrok config add-authtoken 2Aq2PqXjou0fvPJ0SZDFy5OD5bh_7YfykZNt79WK4NHgsvhNt
+ngrok tcp 3389
+tcp://0.tcp.in.ngrok.io:17607
+
+drawing on image
+https://github.com/dilidili/react-drawing-board
+
+*Program:MCA
+*Batch:2023-2025
+Name
+Email
+Mobile
+*Company
+*CTC
+*Designation
+Pic
+CompanyLogo
+
+11'
+2.5
+
+https://docs.google.com/document/d/1hGdRQe2LrjQHHQFzKaNvYuHSx_PWfc0i/edit?usp=sharing&ouid=101370031488514150177&rtpof=true&sd=true
+
+https://docs.google.com/document/d/1Dk0Qn_-61JDg0kpPj2Hcze4s1bpQlRAG/edit?usp=sharing&ouid=101370031488514150177&rtpof=true&sd=true
+
+
+
+imbuesoftworld
+ngrok config add-authtoken 2ZlHUiopVezU9IyDI7vcrvX43Mk_5LuabGk8aYumNN2YNbeLc
+https://b9ca-103-177-194-66.ngrok-free.app/
+
+
+https://www.practo.com/company/contact
+
+https://ehr2.charmtracker.com/ehr/physician/threePaneEncounter.do?ACTION=THREE_PANE_DASHBOARD&CONSULTATION_ID=1168994000000105041&PATIENT_ID=1168994000000105005&FACILITY_ID=154b47432591f0f098ee2e5ce9d5cc8ac81b440bc8a53a00
+
+
+https://www.behance.net/search/projects/medical%20patient%20record?tracking_source=typeahead_search_direct
+https://www.behance.net/gallery/118433039/MediFiles?tracking_source=search_projects|medical+patient+record&l=12
+https://themeforest.net/search/healthcard
+https://www.behance.net/gallery/124812635/New-generation-medical-card-UIUX-concept-(RUS)
+
+
+https://www.hackster.io/diyprojectslab/how-to-make-drone-flight-controller-using-esp8266-b38cf0
+
